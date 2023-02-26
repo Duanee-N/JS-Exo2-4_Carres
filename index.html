@@ -1,0 +1,34 @@
+<!DOCTYPEhtml>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>JS-Exo2-4_Carres</title>
+    </head>
+    <body>
+        <main></main>
+        <script>
+            const box=document.createElement("div") 
+            box.classList.add("box")
+
+            const main=document.querySelector("main") 
+
+            let nb=4
+            for(let i=1; i<=nb;i++){
+                let newbox=box.cloneNode() 
+                newbox.innerText=i 
+                main.appendChild(newbox)
+
+                newbox.addEventListener("click", function(){
+                    if(newbox.classList.contains("box-clicked")){ //classList.contains() permet de vérifier si la classe spécifiée existe dans les classes CSS et renvoie une valeur true ou false
+						newbox.classList.remove("box-clicked")
+                        newbox.classList.add("box")
+                    } else{
+                        newbox.classList.remove("box")
+                        newbox.classList.add("box-clicked")
+                    }
+                })
+            }
+        </script>
+    </body>
+</html>
